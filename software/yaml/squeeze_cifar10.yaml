@@ -1,0 +1,64 @@
+seed: 12
+device:
+  use_gpu: True
+  gpu_id: 0
+  parallel: False
+lr_scheduler:
+  name: 'step'
+  init_args:
+    step_size: 40
+    gamma: 0.3
+loss_func:
+  name: 'cel'
+  init_args: ~
+optimizer:
+  name: 'sgd'
+  init_args:
+    lr: 0.01
+    momentum: 0.9
+    weight_decay: 0.0009
+model:
+  name: 'squeeze'
+  quant_model: False
+  init_args: ~
+dataset:
+  name: 'cifar10'
+  train_valid_split: 0.7
+  use_validation: False
+  aug: True
+  trainset:
+    root: './CIFAR10'
+    download: True
+  testset:
+    root: './CIFAR10'
+    download: True
+  base_transforms:
+    - name: 'torch_img2tensor'
+      init_args:
+    - name: 'normalize_mean_std'
+      init_args:
+        mean: [ 0.5, 0.5, 0.5 ]
+        std: [ 0.5, 0.5, 0.5 ]
+  aug_transforms:
+    - name: 'torch_random_hflip'
+      init_args:
+    - name: 'torch_img2tensor'
+      init_args:
+    - name: 'normalize_mean_std'
+      init_args:
+        mean: [ 0.5, 0.5, 0.5 ]
+        std: [ 0.5, 0.5, 0.5 ]
+train:
+  num_worker: 16
+  batch_size: 100
+  num_epoch: 200
+  drop_last_batch: False
+  use_train_weighted_sampler: False
+  use_test_weighted_sampler: False
+  resume_from_best: False
+  result_dir: '/data/shanbhag/hgeng4/498project' # YOU NEED TO RESET THIS !!
+  model_src_path: ''
+  trainer: 'backprop'
+  print_freq: 100
+  train_model: True
+  save_model_by: 'acc'
