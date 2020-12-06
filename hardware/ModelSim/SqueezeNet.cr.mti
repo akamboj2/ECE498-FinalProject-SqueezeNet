@@ -1,25 +1,19 @@
-{C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling package fire_sv_unit
--- Compiling module fire
--- Compiling module PE
--- Compiling module RELU
--- Compiling module add
--- Compiling module multiply
--- Compiling module register
-
-Top level modules:
-	fire
-	PE
-	RELU
-	add
-	multiply
-
-} {} {}} {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv}
+{C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module testbench
 
 Top level modules:
 	testbench
+
+} {} {}} {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module input_RAM
+-- Compiling module weight_RAM
+-- Compiling module output_RAM
+
+Top level modules:
+	input_RAM
+	weight_RAM
+	output_RAM
 
 } {} {}}
