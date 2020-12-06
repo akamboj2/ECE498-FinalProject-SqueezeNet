@@ -8,14 +8,14 @@ module input_RAM(
 	logic [ADDR_WIDTH-1:0] addr_reg;
 				
 	// RAM definition				
-	parameter [0:2**ADDR_WIDTH-1][DATA_WIDTH-1:0] RAM;
-	
-	
-	initial begin : RAM_INIT
-		for (integer i=0; i<2**ADDR_WIDTH; i++)
-      			RAM[i] <=  {DATA_WIDTH{1'b0}};
-		RAM[0:3]='{8'd1, 8'd2, 8'd3, 8'd4};
+	logic [2**ADDR_WIDTH-1:0] RAM[0:DATA_WIDTH-1];
+
+	initial
+	begin
+		 $readmemh("C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.txt", RAM);
 	end
+
 	assign data = RAM[addr];
 
 endmodule  
+

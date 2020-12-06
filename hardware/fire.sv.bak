@@ -1,8 +1,14 @@
-parameter nbits = 8; //note this is actually the precision in bits + 1 (includes zero)
+parameter nbits = 7; //note this is actually the precision in bits + 1 (includes zero)
 module fire(
 	input logic reset, Clk
 	//if this module was a part of a large nn there could be signals here indicating where it is, when to run, etc.
 );
+
+
+
+logic [4*4*256:0] output_buffer;
+logic [7:0] ram_out; 
+input_RAM inRAM(2,ram_out);
 
 endmodule
 
@@ -12,8 +18,7 @@ module PE(
 	input logic Clk, reset, ld_input,
 	output [nbits:0] out_activation);
 logic [nbits:0] out_MAC;
-register hold_MAC(.data_in(in), .data_out(out_MAC;), .ld(ld_input), .*);
-
+register hold_MAC(.data_in(in), .data_out(out_MAC), .ld(ld_input), .*);
 endmodule
 
 module RELU(

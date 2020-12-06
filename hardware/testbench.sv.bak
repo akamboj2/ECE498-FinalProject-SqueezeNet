@@ -30,14 +30,6 @@ initial begin : TEST_VECTORS
 #2 reset = 1;
 #2 reset = 0;
 
-//set weights: [-0.67776111 -0.41394865 -0.17928979]
-#2 w0 = -0.67776111*16; w1=-0.41394865*16; w2=-0.17928979*16;
-
-#2 xn3 = data[3]; //xn is the one at the end and xn-1 is the one before that, etc
-#2 xn3 = data[2];
-#2 xn3 = data[1];
-#2 xn3 = data[0];
-
 end
 
 endmodule
