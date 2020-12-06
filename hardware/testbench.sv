@@ -29,6 +29,19 @@ initial begin : TEST_VECTORS
 
 #2 ld_output = 1;
 #2 ld_output = 0;
+
+//testing accumulate
+#2 ld_MAC = 1;
+#2 ld_MAC = 0;
+
+#2 ld_output = 1;
+#2 ld_output = 0;
+
+#2 ld_MAC = 1;
+#2 ld_MAC = 0;
+
+#2 ld_output = 1;
+#2 ld_output = 0;
 end
 
 endmodule
