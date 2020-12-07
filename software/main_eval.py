@@ -17,12 +17,16 @@ def main():
     usr_configs.train.result_dir = './'
     usr_configs.device.use_gpu = (device == 'cuda')
     usr_configs.train.train_model = False
+    usr_configs.quant_model = True
     usr_configs.train.model_src_path = args.model_src_path
     trainer_configs = nn_config.TrainerConfigs()
     trainer_configs.__setup__(usr_configs)
 
+    file_object = open(r"activations.txt","w+")
+    file_object.close()
+
     trainer = nn_config.get_trainer(usr_configs.train)(trainer_configs)
-    trainer.eval(trainer.trainer_configs.test_loader, print_acc=True, cfm=True)
+    trainer.eval(trainer.trainer_configs.test_loader, print_acc=True, cfm=False)
 
 
 if __name__ == '__main__':

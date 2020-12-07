@@ -10,6 +10,13 @@ from nn.modules import Fire
 import torch.nn.init as init
 
 
+def getActivation(name):
+    # the hook signature
+    activation = {}
+    def hook(model, input, output):
+        activation[name] = output.detach()
+    return hook, activation
+
 class AlexNet(nn.Module):
     def __init__(self, num_classes=10):
         super(AlexNet, self).__init__()
@@ -70,11 +77,11 @@ class SqueezeNet(nn.Module):
             nn.Conv2d(3, 64, kernel_size=3, stride=2),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=3, stride=2, ceil_mode=True),
-            Fire(64, 16, 64, 64), # Fire(inplanes, s1x1, e1x1, e3x3)
+            Fire(64, 16, 64, 64),
             Fire(128, 16, 64, 64),
             nn.MaxPool2d(kernel_size=3, stride=2, ceil_mode=True),
-            Fire(128, 32, 128, 128),
-            Fire(256, 32, 128, 128),  #todo this is the fire module you need to map to verilog
+            Fire(128, 32, 128, 128),    
+            Fire(256, 32, 128, 128),  #todo this is the fire module you need to map to verilog 
             nn.MaxPool2d(kernel_size=3, stride=2, ceil_mode=True),
             Fire(256, 48, 192, 192),
             Fire(384, 48, 192, 192),
@@ -101,6 +108,10 @@ class SqueezeNet(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = self.features(x)
+        # file_object = open(r"activations.txt","r+")
+        # file_object.write(x)
+        # file_object.close()
+        # torch.save(x,'activations.txt')
         x = self.classifier(x)
         return torch.flatten(x, 1)
 
@@ -114,6 +125,7 @@ class SqueezeNet(nn.Module):
 
     def __str__(self):
         return self.to_str()
+
 
 
 __MODELS__ = {

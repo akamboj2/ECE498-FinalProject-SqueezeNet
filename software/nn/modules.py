@@ -17,6 +17,9 @@ class Fire(nn.Module):
     ) -> None:
         super(Fire, self).__init__()
         self.inplanes = inplanes
+        self.squeeze_planes = squeeze_planes
+        self.expand1x1_planes = expand1x1_planes
+        self.expand3x3_planes = expand3x3_planes
         self.squeeze = nn.Conv2d(inplanes, squeeze_planes, kernel_size=1)
         self.squeeze_activation = nn.ReLU(inplace=True)
         self.expand1x1 = nn.Conv2d(squeeze_planes, expand1x1_planes,
