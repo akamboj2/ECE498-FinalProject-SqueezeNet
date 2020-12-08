@@ -42,9 +42,9 @@ module weight_RAM( //read only
 
 endmodule  
 
-module output_RAM( //write only
-	input [11:0] addr, 
-	input [7:0]data_in,
+module output_RAM( //writes only
+	input logic [11:0] addr, 
+	input logic [7:0]data_in,
 	input logic Clk, reset, ld);
 
 	parameter ADDR_WIDTH = 2;

@@ -19,7 +19,7 @@ logic [7:0] out_PE[9];
 
 //assign in_ram_addr = 10'd3, w_ram_addr = 10'd4, out_ram_addr = 12'd2; //just assigned for testing purposes
 assign out_ram_addrs = '{12'd0, 12'd1, 12'd2, 12'd3, 12'd4, 12'd5, 12'd6, 12'd7, 12'd8 };
-output_RAM outRAM[9](.addr(out_ram_addr), .data_in(out_PE), .ld(ld_output),.*);
+output_RAM outRAM[9](.addr(out_ram_addrs), .data_in(out_PE), .ld(ld_output),.*);
 
 
 //here we should be doing 3*4 = 12
@@ -39,7 +39,7 @@ endmodule
 module PE(
 	input [nbits:0] in_input, in_weight,
 	input logic Clk, reset, ld_MAC,
-	output [nbits:0] out_activation [9]);
+	output [nbits:0] out_activation);
 logic [nbits:0] out_MAC, mult_out, add_out;
 multiply m(in_weight, in_input, mult_out);
 add a(mult_out, out_MAC, add_out);
