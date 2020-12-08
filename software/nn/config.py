@@ -30,10 +30,11 @@ from nn.utils import ImbalancedDatasetSampler
 
 
 def get_device(device_usr_configs):
-    device = 'cuda' if device_usr_configs.use_gpu else 'cpu'
-    if device == 'cuda':
-        device = "{}:{}".format(device, device_usr_configs.gpu_id)
-    return device
+    # device = 'cuda' if device_usr_configs.use_gpu else 'cpu'
+    # if device == 'cuda':
+    #     device = "{}:{}".format(device, device_usr_configs.gpu_id)
+    # return device
+    device = 'cpu'
 
 
 def get_lr_scheduler(optimizer, lr_scheduler_usr_configs):
@@ -140,8 +141,8 @@ def get_model(model_usr_configs):
 
     model_obj = model_cls(**model_usr_configs.init_args.__dict__)
 
-    if model_usr_configs.quant_model:
-        model_obj = quantization.quantize_model(model_obj, model_usr_configs)
+    # if model_usr_configs.quant_model:
+    model_obj = quantization.quantize_model(model_obj, model_usr_configs)
 
     return model_obj
 

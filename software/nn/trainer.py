@@ -13,6 +13,7 @@ import os
 import time
 
 import torch
+import numpy as np
 
 import IO.plotter as plotter
 from IO.dconst import EPOCH_FMT_STR
@@ -235,7 +236,7 @@ class Trainer:
         return NotImplementedError
 
     def load_ckpt(self):
-        ckpt = torch.load(self.trainer_configs.model_src_path, map_location=self.trainer_configs.device)
+        ckpt = torch.load(self.trainer_configs.model_src_path, map_location='cpu')
         self.nnresult = ckpt.get('analysis')
         self.trainer_configs.model.load_state_dict(ckpt.get('model_state'))
         self.trainer_configs.optimizer.load_state_dict(ckpt.get('optimizer_state'))
@@ -269,7 +270,38 @@ class BackPropTrainer(Trainer):
         :param y: target
         :return: validation / test acc, valiation / test loss
         """
+        inputs= []
+        outputs = []
+        def hook(module, input, output):
+            inputs.append(input)
+            outputs.append(output)
+        self.trainer_configs.model.features[7].register_forward_hook(hook)
         output = self.trainer_configs.model(x)
+        # print(inputs[0][0].size())
+        # print(outputs[0].size())
+        # input_ = inputs[0][0].numpy().astype(float)
+        # file = open("inputs.txt", "w+")
+        # input_.tofile(file, ",")
+        # file.close
+        # output_ = outputs[0][0].numpy().astype(float)
+        # file = open("outputs.txt", "w+")
+        # input_.tofile(file, ",")
+        # file.close
+        squeeze = self.trainer_configs.model.features[7].squeeze.weight.data.numpy().astype(float)
+        print(squeeze.shape)
+        expand1x1 = self.trainer_configs.model.features[7].expand1x1.weight.data.numpy().astype(float)
+        print(expand1x1.shape)
+        expand3x3 = self.trainer_configs.model.features[7].expand3x3.weight.data.numpy().astype(float)
+        print(expand3x3.shape)
+        # file = open("squeeze.txt", "w+")
+        # squeeze.tofile(file, ",") 
+        # file.close() 
+        # file = open("expand1x1.txt", "w+")  
+        # expand1x1.tofile(file, ",") 
+        # file.close()
+        # file = open("expand3x3.txt", "w+")  
+        # expand3x3.tofile(file, ",") 
+        # file.close()
         loss = self.trainer_configs.criterion(output, y)
         accs, predictions = accuracy(output, y, topk=(1,))
         acc = accs[0]
