@@ -12,7 +12,7 @@ module input_RAM( //read only
 
 	initial
 	begin
-		 $readmemh("C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/ram.txt", RAM);
+		 $readmemh("C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/ram_in3x3.txt", RAM);
 	end
 
 	assign data = '{RAM[addr], RAM[addr+1], RAM[addr+2], RAM[addr+3], 
