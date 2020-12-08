@@ -5,8 +5,10 @@ module fire(
 	input logic reset, Clk, 
 	input logic ld_MAC, ld_output, //these are control signals, currently i'm sending from testbench
 	input logic [7:0] in_input[9],
-	input logic [7:0] in_weight
-	
+	input logic [7:0] in_weight, //only used for 3x3 conv where all PEs make 1 pixel
+	input logic [11:0] bias3x3,
+
+	output logic [11:0] PE_added
 	//if this module was a part of a large nn there could be signals here indicating where it is, when to run, etc.
 );
 
@@ -16,22 +18,23 @@ logic [7:0] out_activation; //inputRAM and weightRAM output wires, outputRams in
 logic [11:0] out_ram_addrs[9];
 logic [7:0] out_PE[9];
 
-
 //assign in_ram_addr = 10'd3, w_ram_addr = 10'd4, out_ram_addr = 12'd2; //just assigned for testing purposes
-assign out_ram_addrs = '{12'd0, 12'd1, 12'd2, 12'd3, 12'd4, 12'd5, 12'd6, 12'd7, 12'd8 };
-output_RAM outRAM[9](.addr(out_ram_addrs), .data_in(out_PE), .ld(ld_output),.*);
+//assign out_ram_addrs = '{12'd0, 12'd1, 12'd2, 12'd3, 12'd4, 12'd5, 12'd6, 12'd7, 12'd8 };
+//output_RAM outRAM(.addr(out_ram_addrs), .data_in(out_PE), .ld(ld_output),.*);
 
 
 //here we should be doing 3*4 = 12
 //PE PE1(.in_input(in_ram_out), .in_weight(w_ram_out), .out_activation(out_activation), .ld_MAC(ld_MAC),.*);
 PE PE_array[9](
-	.in_input(in_input),
-	.in_weight(in_weight),
-	.out_activation(out_PE),
-	.ld_MAC(ld_MAC),
+	.in_input(in_input), //9 different inputs for each PE
+	.in_weight(in_weight), //single weight broadcasted to all PEs
+	.out_activation(out_PE), //9 different outputs for each PE
+	.ld_MAC(ld_MAC), //single ld signal broadcasted
 	.*
 );
 
+assign PE_added = out_PE[0] + out_PE[1] + out_PE[2] + out_PE[3] + out_PE[4] + out_PE[5] 
+	+ out_PE[6] + out_PE[7] + out_PE[8] + bias3x3;
 
 endmodule
 

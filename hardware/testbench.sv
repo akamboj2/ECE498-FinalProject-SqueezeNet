@@ -20,6 +20,7 @@ fire f(.*);
 logic [7:0] w_ram_out, in_weight;
 logic [7:0] in_input[9];//in_ram_out[9];
 logic [9:0] in_ram_addr, w_ram_addr;
+logic [11:0] bias3x3= 8'd0,PE_added;
 
 
 input_RAM inRAM(.addr(in_ram_addr),.data(in_input));
@@ -33,12 +34,12 @@ initial begin : TEST_VECTORS
 #2 reset = 1;
 #2 reset = 0;
 
-#2 in_ram_addr = 0; w_ram_addr = 0;
+#2 in_ram_addr = 0; w_ram_addr = 1;
 
 #2 ld_MAC = 1;
 #2 ld_MAC = 0;
 
-#2 in_ram_addr = 9; w_ram_addr = 1;
+#2 in_ram_addr = 9; w_ram_addr = 2;
 
 #2 ld_MAC = 1;
 #2 ld_MAC = 0;

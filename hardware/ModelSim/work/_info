@@ -10,23 +10,23 @@ cModel Technology
 dC:/intelFPGA_lite/18.1
 vadd
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 DXx4 work 12 fire_sv_unit 0 22 ClFgm2feh]RI>eCMDfTcL0
+Z1 DXx4 work 12 fire_sv_unit 0 22 bgi0;nDjfOjQ[d]9URJRb1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 31
 !i10b 1
-!s100 J=iWS1TOZQn=XK?Q80Y[g2
-I4_0TRB8lDzAX_;c>3VKOd1
+!s100 7G1bNTP=gd@EPheL2dVVP0
+Ij[=3kMD4kDT^`LWekWN[61
 Z3 !s105 fire_sv_unit
 S1
 Z4 dC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/ModelSim
-Z5 w1607443208
+Z5 w1607465566
 Z6 8C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv
 Z7 FC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv
-L0 56
+L0 59
 Z8 OV;L;10.5b;63
-Z9 !s108 1607443216.000000
+Z9 !s108 1607465577.000000
 Z10 !s107 C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv|
 Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv|
 !i113 1
@@ -40,8 +40,8 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 ;OKEJFd_=cjg`5;T<[e_e2
-I1Kfjd1QgmgG6^`2Tic5e33
+!s100 Tg5eBAcUhDWMBeaa@om<U0
+IkDn=G9lkPT]CVaiaM6Li`1
 R3
 S1
 R4
@@ -58,13 +58,13 @@ R12
 R13
 Xfire_sv_unit
 R0
-VClFgm2feh]RI>eCMDfTcL0
+Vbgi0;nDjfOjQ[d]9URJRb1
 r1
 !s85 0
 31
 !i10b 1
-!s100 7TFJUbY8fZ8ajFl<KKc8@0
-IClFgm2feh]RI>eCMDfTcL0
+!s100 kh6_VZ;[2X31j4X7]BN[<0
+Ibgi0;nDjfOjQ[d]9URJRb1
 !i103 1
 S1
 R4
@@ -81,7 +81,7 @@ R12
 R13
 vinput_RAM
 R0
-Z14 !s110 1607443216
+Z14 !s110 1607465577
 !i10b 1
 !s100 CIJ02z`71hHbVdo[A;O3[2
 ISYcccB9@@fljX;=JYCTCz0
@@ -89,7 +89,7 @@ R2
 Z15 !s105 RAM_sv_unit
 S1
 R4
-Z16 w1607443121
+Z16 w1607443819
 Z17 8C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv
 Z18 FC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv
 L0 1
@@ -112,15 +112,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 7hj<^^fk>dgBnO;4Kl:AZ2
-IzkB;cQI_5;`>=CkR0l_R21
+!s100 ;X0POEgOA?din:4n6?SEU0
+I_C8;HeSWaE7HHif0A<VN;1
 R3
 S1
 R4
 R5
 R6
 R7
-L0 62
+L0 65
 R8
 R9
 R10
@@ -161,15 +161,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 T[lJ3zz7m2io^c^7?`mF61
-I=YF_PfT>4WJFVTF?5[2Jn0
+!s100 SCaoI?MSRZMM9Nd7eZ`O^0
+I[aE?EokXNEjP556eUP:>G3
 R3
 S1
 R4
 R5
 R6
 R7
-L0 39
+L0 42
 R8
 R9
 R10
@@ -186,15 +186,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 F?jL2KlZ>3indfV>9zzBa3
-IT@_`N163IF0d2`8Dh1W_81
+!s100 ><`M?Fm;YGPbb6=H_FAnY1
+IPZX[0I21_K85lX?HAZCAd3
 R3
 S1
 R4
 R5
 R6
 R7
-L0 68
+L0 71
 R8
 R9
 R10
@@ -210,15 +210,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 P87XFzMei^DVHLV1WJB>R0
-IC_KNgS[NbLW29W@GnO:5`1
+!s100 CkaIZjhY;LdZohXOiC7Rk3
+I<GmDfIJ2hSDg2Z:4LcihT0
 R3
 S1
 R4
 R5
 R6
 R7
-L0 50
+L0 53
 R8
 R9
 R10
@@ -231,13 +231,13 @@ vtestbench
 R0
 R14
 !i10b 1
-!s100 1_U89<`KO47W86c29^>mL3
-Ik6A4>NbkC5G4>]oS91H1g1
+!s100 3U:IOT_me[1o<dIUlKaK`3
+IPnIA[IXhcF1?IhkNODEz72
 R2
 !s105 testbench_sv_unit
 S1
 R4
-w1607381549
+w1607465276
 8C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv
 FC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv
 L0 1
