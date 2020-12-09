@@ -149,9 +149,9 @@ class QConv2d(nn.Conv2d):
         #     if not hasattr(self.bias, 'org'):
         #         self.bias.org = self.bias.data.clone()
         self.quantize_params()
-        inputs = quantize_uniform(inputs, 8 , 4, device='cpu')
+        inputs = quantize_uniform(inputs, 8, 8, device='cpu')
         out = F.conv2d(inputs, self.weight, self.bias, self.stride, self.padding, self.dilation, self.groups)
-        out = quantize_uniform(out, 8 , 8, device='cpu')
+        out = quantize_uniform(out, 8, 8, device='cpu')
         return out
 
     def quantize_params(self):
