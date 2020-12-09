@@ -1,15 +1,10 @@
-{C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv}
+{C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling package fire_sv_unit
--- Compiling module fire
--- Compiling module PE
--- Compiling module RELU
--- Compiling module add
--- Compiling module multiply
--- Compiling module register
+-- Compiling package testbench_sv_unit
+-- Compiling module testbench
 
 Top level modules:
-	fire
+	testbench
 
 } {} {}} {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

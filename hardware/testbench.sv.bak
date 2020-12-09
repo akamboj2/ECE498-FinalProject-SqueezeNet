@@ -1,3 +1,5 @@
+parameter nbits = 7;
+
 module testbench();
 timeunit 10ns;
 timeprecision 1ns;
@@ -20,8 +22,8 @@ fire f(.*);
 logic [7:0] w_ram_out, in_weight;
 logic [7:0] in_input[9];//in_ram_out[9];
 logic [9:0] in_ram_addr, w_ram_addr;
-logic [11:0] bias3x3= 8'd0,PE_added;
-
+logic [nbits:0] bias3x3= 8'd2,PE_added;
+logic [nbits:0] out_PE[9];
 
 input_RAM inRAM(.addr(in_ram_addr),.data(in_input));
 weight_RAM wRAM(.addr(w_ram_addr),.data(w_ram_out));

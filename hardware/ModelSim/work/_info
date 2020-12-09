@@ -10,23 +10,23 @@ cModel Technology
 dC:/intelFPGA_lite/18.1
 vadd
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 DXx4 work 12 fire_sv_unit 0 22 bgi0;nDjfOjQ[d]9URJRb1
+Z1 DXx4 work 12 fire_sv_unit 0 22 iQ]T[YGKI7OAQiEn5m3]D1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 31
 !i10b 1
-!s100 7G1bNTP=gd@EPheL2dVVP0
-Ij[=3kMD4kDT^`LWekWN[61
+!s100 k<QAYERPAoQV6=VY8RAm01
+I_=ZRT_I7Jh;z?h>gPjQ6R3
 Z3 !s105 fire_sv_unit
 S1
 Z4 dC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/ModelSim
-Z5 w1607465566
+Z5 w1607545457
 Z6 8C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv
 Z7 FC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv
-L0 59
+L0 52
 Z8 OV;L;10.5b;63
-Z9 !s108 1607467696.000000
+Z9 !s108 1607545462.000000
 Z10 !s107 C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv|
 Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv|
 !i113 1
@@ -40,8 +40,8 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 Tg5eBAcUhDWMBeaa@om<U0
-IkDn=G9lkPT]CVaiaM6Li`1
+!s100 2ULf_NF=MUNScGzJ3T1^G1
+Io71<2afMFZC3giCQXo7H60
 R3
 S1
 R4
@@ -58,13 +58,13 @@ R12
 R13
 Xfire_sv_unit
 R0
-Vbgi0;nDjfOjQ[d]9URJRb1
+ViQ]T[YGKI7OAQiEn5m3]D1
 r1
 !s85 0
 31
 !i10b 1
-!s100 kh6_VZ;[2X31j4X7]BN[<0
-Ibgi0;nDjfOjQ[d]9URJRb1
+!s100 8K[I9<b_6MEZL1ZkAJXF50
+IiQ]T[YGKI7OAQiEn5m3]D1
 !i103 1
 S1
 R4
@@ -81,7 +81,7 @@ R12
 R13
 vinput_RAM
 R0
-Z14 !s110 1607467696
+Z14 !s110 1607545462
 !i10b 1
 !s100 <ofM`O;KGoY4D6]m]e:Kc1
 IjXJ0RB3>A`aQVk35dgdXb1
@@ -97,9 +97,9 @@ R8
 r1
 !s85 0
 31
-Z19 !s108 1607467695.000000
-Z20 !s107 C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv|
-Z21 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv|
+R9
+Z19 !s107 C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv|
+Z20 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv|
 !i113 1
 R12
 R13
@@ -112,15 +112,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 ;X0POEgOA?din:4n6?SEU0
-I_C8;HeSWaE7HHif0A<VN;1
+!s100 Fbb:9Jk@bJn;_=k0hAml30
+ICjj4C;ioYLU0ZR@UHCS[20
 R3
 S1
 R4
 R5
 R6
 R7
-L0 65
+L0 58
 R8
 R9
 R10
@@ -146,9 +146,9 @@ R8
 r1
 !s85 0
 31
+R9
 R19
 R20
-R21
 !i113 1
 R12
 R13
@@ -161,15 +161,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 SCaoI?MSRZMM9Nd7eZ`O^0
-I[aE?EokXNEjP556eUP:>G3
+!s100 :?>ClDik1z2f5ZPBK6:EW3
+IZVZjOjm3iC1;;`Xj6;l:T0
 R3
 S1
 R4
 R5
 R6
 R7
-L0 42
+L0 35
 R8
 R9
 R10
@@ -186,15 +186,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 ><`M?Fm;YGPbb6=H_FAnY1
-IPZX[0I21_K85lX?HAZCAd3
+!s100 :CSE=]cV=MRWng^obg8B<1
+I68knjlScJXfg2VM;_HPVh3
 R3
 S1
 R4
 R5
 R6
 R7
-L0 71
+L0 64
 R8
 R9
 R10
@@ -210,15 +210,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 CkaIZjhY;LdZohXOiC7Rk3
-I<GmDfIJ2hSDg2Z:4LcihT0
+!s100 _Z=2lYkGGWhPY41H;7T`U2
+IblP`M1Tc]>m<K7X76m=Zn1
 R3
 S1
 R4
 R5
 R6
 R7
-L0 53
+L0 46
 R8
 R9
 R10
@@ -229,25 +229,48 @@ R13
 n@r@e@l@u
 vtestbench
 R0
-R14
-!i10b 1
-!s100 i:BYn4O=@F:AIMF;9ohai1
-IB``oW`3;WDHPJbD[Rb7K41
+DXx4 work 17 testbench_sv_unit 0 22 QPYMNmQ^mJnX2oCk<2aFc0
 R2
-!s105 testbench_sv_unit
-S1
-R4
-w1607467688
-8C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv
-FC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv
-L0 1
-R8
 r1
 !s85 0
 31
+!i10b 1
+!s100 EE:dH893e8YYJn=FO]Fjb3
+Il8z1KVkZAhV2YFQCcn>P:1
+!s105 testbench_sv_unit
+S1
+R4
+Z21 w1607544936
+Z22 8C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv
+Z23 FC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv
+L0 3
+R8
 R9
-!s107 C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv|
+Z24 !s107 C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv|
+Z25 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv|
+!i113 1
+R12
+R13
+Xtestbench_sv_unit
+R0
+VQPYMNmQ^mJnX2oCk<2aFc0
+r1
+!s85 0
+31
+!i10b 1
+!s100 HVL4H7T`HSO<]C<]k4gnB3
+IQPYMNmQ^mJnX2oCk<2aFc0
+!i103 1
+S1
+R4
+R21
+R22
+R23
+L0 1
+R8
+R9
+R24
+R25
 !i113 1
 R12
 R13
@@ -269,9 +292,9 @@ R8
 r1
 !s85 0
 31
+R9
 R19
 R20
-R21
 !i113 1
 R12
 R13
