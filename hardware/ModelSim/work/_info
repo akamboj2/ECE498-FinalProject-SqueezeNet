@@ -10,23 +10,23 @@ cModel Technology
 dC:/intelFPGA_lite/18.1
 vadd
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 DXx4 work 12 fire_sv_unit 0 22 iQ]T[YGKI7OAQiEn5m3]D1
+Z1 DXx4 work 12 fire_sv_unit 0 22 A6lo]@Yh9fj3P124Lo0@k3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 31
 !i10b 1
-!s100 k<QAYERPAoQV6=VY8RAm01
-I_=ZRT_I7Jh;z?h>gPjQ6R3
+!s100 TOMDTGnAiF`lZ^SCJOM^C2
+Iz9GcTkRbAIOfVZo4BFRYa2
 Z3 !s105 fire_sv_unit
 S1
 Z4 dC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/ModelSim
-Z5 w1607545733
+Z5 w1607546171
 Z6 8C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv
 Z7 FC:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv
-L0 52
+L0 50
 Z8 OV;L;10.5b;63
-Z9 !s108 1607546067.000000
+Z9 !s108 1607546176.000000
 Z10 !s107 C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv|
 Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/fire.sv|
 !i113 1
@@ -40,8 +40,8 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 nB;YDJg1nUH[^hB=Ib3oX2
-I7M@;i3<D>4^SROVWkSE<j2
+!s100 3:SNCVn8T]^lGTWagBgC]3
+Ik8blSTl`z;FB1a]Q^_43A1
 R3
 S1
 R4
@@ -58,13 +58,13 @@ R12
 R13
 Xfire_sv_unit
 R0
-ViQ]T[YGKI7OAQiEn5m3]D1
+VA6lo]@Yh9fj3P124Lo0@k3
 r1
 !s85 0
 31
 !i10b 1
-!s100 8K[I9<b_6MEZL1ZkAJXF50
-IiQ]T[YGKI7OAQiEn5m3]D1
+!s100 9io1iA@>M[Lk@?3DlP5OE2
+IA6lo]@Yh9fj3P124Lo0@k3
 !i103 1
 S1
 R4
@@ -81,7 +81,7 @@ R12
 R13
 vinput_RAM
 R0
-Z14 !s110 1607546067
+Z14 !s110 1607546176
 !i10b 1
 !s100 <ofM`O;KGoY4D6]m]e:Kc1
 IjXJ0RB3>A`aQVk35dgdXb1
@@ -112,15 +112,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 Fbb:9Jk@bJn;_=k0hAml30
-ICjj4C;ioYLU0ZR@UHCS[20
+!s100 V3NM^R_c?=4ZLX:Zn]JP]2
+IPcQBm<2HEUncOMglM4@Si0
 R3
 S1
 R4
 R5
 R6
 R7
-L0 58
+L0 56
 R8
 R9
 R10
@@ -161,15 +161,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 :?>ClDik1z2f5ZPBK6:EW3
-IZVZjOjm3iC1;;`Xj6;l:T0
+!s100 ]b]2WRWmLJ<:`0FA0EB<`1
+I^[eHEOzZf[T]6[[D06heU0
 R3
 S1
 R4
 R5
 R6
 R7
-L0 35
+L0 33
 R8
 R9
 R10
@@ -186,15 +186,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 :CSE=]cV=MRWng^obg8B<1
-I68knjlScJXfg2VM;_HPVh3
+!s100 Hi1;?E[IK@Cg73:mVh[b13
+I6K8=ihT4aJ`ejeZGbzieB0
 R3
 S1
 R4
 R5
 R6
 R7
-L0 64
+L0 62
 R8
 R9
 R10
@@ -210,15 +210,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 _Z=2lYkGGWhPY41H;7T`U2
-IblP`M1Tc]>m<K7X76m=Zn1
+!s100 ZJ6J6;TTB8RBhW44jbN701
+I15S1NANC^@19cmJd7g5Q13
 R3
 S1
 R4
 R5
 R6
 R7
-L0 46
+L0 44
 R8
 R9
 R10

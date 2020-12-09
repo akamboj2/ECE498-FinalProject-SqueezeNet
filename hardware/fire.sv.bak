@@ -5,7 +5,7 @@ module fire(
 	input logic reset, Clk, 
 	input logic ld_MAC, //these are control signals, currently i'm sending from testbench
 	input logic [7:0] in_input[9],
-	input logic [7:0] in_weight, //only used for 3x3 conv where all PEs make 1 pixel
+	input logic [7:0] in_weight[9], //only used for 3x3 conv where all PEs make 1 pixel
 	input logic [nbits:0] bias3x3,
 
 	output logic [nbits:0] PE_added,

@@ -13,8 +13,6 @@ module fire(
 	//if this module was a part of a large nn there could be signals here indicating where it is, when to run, etc.
 );
 
-//logic [7:0] out_activation; //inputRAM and weightRAM output wires, outputRams input wire
-logic [nbits:0] out_ram_addrs[9];
 
 //here we should be doing 3*4 = 12
 //PE PE1(.in_input(in_ram_out), .in_weight(w_ram_out), .out_activation(out_activation), .ld_MAC(ld_MAC),.*);
