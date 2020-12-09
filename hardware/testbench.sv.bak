@@ -1,4 +1,4 @@
-parameter nbits = 7;
+parameter nbits = 256;
 
 module testbench();
 timeunit 10ns;
@@ -19,7 +19,7 @@ end
 
 fire f(.*);
 
-logic [7:0] w_ram_out, in_weight;
+logic [7:0] in_weight, in_weight[9];
 logic [7:0] in_input[9];//in_ram_out[9];
 logic [9:0] in_ram_addr, w_ram_addr;
 logic [nbits:0] bias3x3= 8'd2,PE_added;
@@ -27,8 +27,9 @@ logic [nbits:0] out_PE[9];
 
 input_RAM inRAM(.addr(in_ram_addr),.data(in_input));
 weight_RAM wRAM(.addr(w_ram_addr),.data(w_ram_out));
-
-assign in_weight = w_ram_out;
+assign in_weight[0] = w_ram_out, in_weight[1]=w_ram_out, in_weight[2]=w_ram_out, 
+in_weight[3]=w_ram_out, in_weight[4]=w_ram_out,in_weight[5]=w_ram_out, in_weight[6]=w_ram_out,
+in_weight[7]=w_ram_out, in_weight[8]=w_ram_out;
 
 initial begin : TEST_VECTORS
 

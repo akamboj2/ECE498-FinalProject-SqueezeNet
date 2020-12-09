@@ -1,12 +1,4 @@
-{C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/testbench.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling package testbench_sv_unit
--- Compiling module testbench
-
-Top level modules:
-	testbench
-
-} {} {}} {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv}
+{C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Abhi Kamboj/ECE498-Project-SqueezeNet/hardware/RAM.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module input_RAM
 -- Compiling module weight_RAM
