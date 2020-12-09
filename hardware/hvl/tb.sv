@@ -10,22 +10,35 @@ module tb;
     logic [7:0] PE_inputs [8:0];
     logic [7:0] PE_weights [8:0];
     logic [7:0] PE_outputs [8:0];
+    logic [7:0] 3x3_out;
+    logic [7:0] bias3x3;
 
     logic [7:0] output_s [];
     logic [7:0] output_ [];
-
-    typedef logic [7:0] logic_da [];
 
     logic_da lookup_input[real];
     logic_da lookup_weight[real];
     logic_da lookup_output[real];
 
-
+    fire dut(.reset(rst),
+            .Clk(clk),
+            .in_input(PE_inputs),
+            .ld_MAC(~rst),
+            .in_weight(PE_weights),
+            .out_PE(PE_outputs),
+            .PE_added(3x3_out),
+            .bias3x3(bias3x3));
 
     initial begin
         clk <= 0;
 
         counter <= 0;
+
+        rst = 1'b1;
+        #40;
+        rst = 0;
+        #40;
+        bias3x3 <= 0;
 
         val = -8'd128;
         index = -8;
@@ -48,8 +61,8 @@ module tb;
         val = 8'd0;
         index = 0;
         for(int i = 0; i < 256; i++)begin
-            lookup_output[index] = new[1];
-            lookup_output[index] = val;
+            lookup_weight[index] = new[1];
+            lookup_weight[index] = val;
             index = index + 0.00390625;
             val = val + 8'd1;
         end
@@ -60,7 +73,7 @@ module tb;
         for(int i =0; i < 32; i++)begin 
             for(int j = 0; j < 256; j++)begin//for loop for first convolution
                 for(int k = 0; k < 9; k++)begin
-                    PE_inputs[k] = lookup_input[arrays::inputs[j+k]];
+                    PE_inputs[k] = lookup_input[arrays::inputs[j*9+k]];
                     PE_weights[k] = lookup_weight[arrays::weight_s[i*256+j]];
                 end
                 #40;
@@ -76,6 +89,9 @@ module tb;
                 output_s[i*9 + k] = new[1]
                 output_s[i*9 + k] = PE_outputs[k];
             end
+            rst <= 1'b1;
+            #40;
+            rst <= 1'b0;
         end
 
         //have to modify the first layer outputs to feed into other layers since clipping is different
@@ -83,7 +99,7 @@ module tb;
         for(int i = 0; i < 128; i++)begin
             for(int j = 0; j < 32; j++)begin//for loop for the 1x1 expand
                 for(int k = 0; k < 9; k++)begin
-                    PE_inputs[k] = output_s[j+k];
+                    PE_inputs[k] = output_s[j*9+k];
                     PE_weights[k] = lookup_weight[arrays::weight_1x1[i*32+j]];
                 end
                 #40;
@@ -99,6 +115,9 @@ module tb;
                 output_[i*9 + k] = new[1]
                 output_[i*9 + k] = PE_outputs[k];
             end
+            rst <= 1'b1;
+            #40;
+            rst <= 1'b0;
         end
 
         for(int i = 0; i < 128; i++)begin//for loop for the 3x3 expand
@@ -209,26 +228,22 @@ module tb;
                     #40;
                     counter <= counter + 1;
                 end
-                accumulate <= 1'b1;
+                bias3x3 = lookup_weight[arrays::bias_3x3[i]];
                 #40;
+                bias3x3 = 8'b0;
                 counter <= counter + 1;
-                for(int w = 0; w < 9; w++)begin
-                    if(w != 0)begin
-                        PE_weights[w] = lookup_weight[0];
-                        PE_inputs[w] = lookup_input[0];
-                    end
-                    else begin
-                        PE_weights[w] = lookup_weight[arrays::bias_3x3[i]];
-                        PE_inputs[w] = lookup_input[1];
-                    end
-                end
+                output_3x3[i*9+j] = new[1];
+                output_3x3[i*9+j] = 3x3_out; 
+                rst <= 1'b1;
                 #40;
-                counter <= counter + 1;
-                output_[idx] = new[1];
-                output_[idx] = PE_output[0]; 
+                rst <= 1'b0;
             end
         end
 
         //compare the ideal outputs 
-
+        // for(int i = 0; i < 11385; i++)begin
+        //     if(output_[i] != lookup_output[arrays::outputs[i]])begin
+        //            $display(); 
+        //     end
+        // end
     end
