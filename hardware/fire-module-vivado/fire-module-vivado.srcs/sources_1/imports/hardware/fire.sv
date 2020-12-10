@@ -1,4 +1,4 @@
-parameter nbits = 24; //note this is actually the precision in bits + 1 (includes zero)
+parameter nbits = 256; //note this is actually the precision in bits + 1 (includes zero)
 //^note this is only in this file. make sure to change ram file and testbench if you change this value!
 
 module fire(
@@ -35,7 +35,7 @@ module PE(
 	input logic Clk, reset, ld_MAC,
 	output [nbits:0] out_activation);
 logic [nbits:0] out_MAC, mult_out, add_out;
-multiply m({{17'b0},{in_weight}}, {{17'b0},{in_input}}, mult_out);
+multiply m({{249'b0},{in_weight}}, {{249'b0},{in_input}}, mult_out);
 add a(mult_out, out_MAC, add_out);
 register hold_MAC(.data_in(add_out), .data_out(out_MAC), .ld(ld_MAC), .*); //to initialize to zero hit reset
 RELU activation(out_MAC, out_activation);
