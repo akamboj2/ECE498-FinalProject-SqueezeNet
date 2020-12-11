@@ -85,12 +85,6 @@ def quantize_uniform(data, n_bits, clip, device='cuda'):
 
 
 def quantize_act(data, n_bits, clip, device='cuda'):
-    # d_c = data.clamp(0, clip)
-    # b = torch.pow(torch.tensor(2.0), -n_bits).to(device)
-    # d_q = clip * torch.min(b * torch.round(d_c / (b * clip)), 1 - b)
-    # BX = n_bits
-    # input = torch.clamp(data,0,clip) / clip
-    # d_q = 6 * torch.min(torch.round(data*(2**BX))*(2**(-BX)) ,(1.0-(2**(-BX)))*torch.ones_like(data))
     data = data.numpy()
     data = data.clip(0,clip)
     d_q = np.minimum(np.round(data*np.power(2.0,n_bits))*np.power(2.0,-n_bits) ,1.0-np.power(2.0,-n_bits))
@@ -131,32 +125,19 @@ class QAdam(torch.optim.Adam):
 
 
 class QConv2d(nn.Conv2d):
-    # def __init__(self, quant_scheme='TWN', quant_args=None, init_args=None, *kargs, **kwargs):
-    #     super(QConv2d, self).__init__(*kargs, **kwargs)
-    #     self.weight.data = init_args['weight_data']
-    #     if kwargs['bias']:
-    #         self.bias.data = init_args['bias_data']
-    #     self.quant_scheme = quant_scheme
-    #     self.clip_val = 0
-    #     self.num_bits_weight = quant_args['num_bits_weight']
-    #     self.num_bits_act = quant_args['num_bits_act']
-    #     self.quant_act = quant_args['quant_act']
+    
+    def quantize_params(self):
+        self.weight = nn.Parameter(quantize_uniform(self.weight, 8, 1, device='cpu'))
+        self.bias = nn.Parameter(quantize_uniform(self.bias, 8, 1, device='cpu'))
 
     def forward(self, inputs):
-        # if not hasattr(self.weight, 'org'):
-        #     self.weight.org = self.weight.data.clone()
-        # if self.bias is not None:
-        #     if not hasattr(self.bias, 'org'):
-        #         self.bias.org = self.bias.data.clone()
         self.quantize_params()
         inputs = quantize_uniform(inputs, 8, 8, device='cpu')
         out = F.conv2d(inputs, self.weight, self.bias, self.stride, self.padding, self.dilation, self.groups)
         out = quantize_uniform(out, 8, 8, device='cpu')
         return out
 
-    def quantize_params(self):
-        self.weight = nn.Parameter(quantize_uniform(self.weight, 8, 1, device='cpu'))
-        self.bias = nn.Parameter(quantize_uniform(self.bias, 8, 1, device='cpu'))
+    
 
 
 
